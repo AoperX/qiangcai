@@ -43,6 +43,7 @@ def start():
         if d(text="支付订单").exists:
             print("抢菜成功,请手动支付!")
             sys.exit(0)
+
 if __name__ == '__main__':
     print("美团抢菜插件程序正在运行中....")
     start()
