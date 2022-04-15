@@ -58,7 +58,7 @@ def start():
                                 recv_time_list.append(elem.text)
                         d(text=recv_time_list[-1]).click()
 
-                    
+
 if __name__ == '__main__':
     print("叮咚抢菜插件程序正在运行中....")
     start()

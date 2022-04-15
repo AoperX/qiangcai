@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 import uiautomator2 as u2
 
 
@@ -32,17 +33,16 @@ def start():
             d(textContains="结算").click()
         if d(text="返回购物车").exists:
             d(text="返回购物车").click()
-           
+
         if d(text="确定").exists:
             d(text="确定").click()
-            
+
         if d(text="立即支付").exists:
             d(text="立即支付").click()
-            if d(text="时间").exists:
-                for elem in d.xpath("//android.widget.TextView").all():
-                    if "-" in elem.text:
-                        recv_time_list.append(elem.text)
-            d(text=recv_time_list[-1]).click()
+
+        if d(text="支付订单").exists:
+            print("抢菜成功,请手动支付!")
+            sys.exit(0)
 if __name__ == '__main__':
     print("美团抢菜插件程序正在运行中....")
     start()
